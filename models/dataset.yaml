@@ -1,0 +1,78 @@
+# FastBillingX Product Detection Dataset Configuration
+# YOLO Dataset Format
+
+path: ../data  # dataset root
+train: images/train  # training images
+val: images/val    # validation images
+test: images/test  # test images (optional)
+
+# Number of classes (for full implementation: 5310 products)
+# For demo: using 80 common classes (standard COCO dataset classes)
+nc: 80
+
+# Class names (80 COCO classes + 5230 product-specific)
+names: [
+  # COCO Base Classes (0-79)
+  'person', 'bicycle', 'car', 'motorcycle', 'airplane', 'bus', 'train', 'truck',
+  'boat', 'traffic light', 'fire hydrant', 'stop sign', 'parking meter', 'bench',
+  'cat', 'dog', 'horse', 'sheep', 'cow', 'elephant', 'bear', 'zebra', 'giraffe',
+  'backpack', 'umbrella', 'handbag', 'tie', 'suitcase', 'frisbee', 'skis',
+  'snowboard', 'sports ball', 'kite', 'baseball bat', 'baseball glove',
+  'skateboard', 'surfboard', 'tennis racket', 'bottle', 'wine glass', 'cup',
+  'fork', 'knife', 'spoon', 'bowl', 'banana', 'apple', 'sandwich', 'orange',
+  'broccoli', 'carrot', 'hot dog', 'pizza', 'donut', 'cake', 'chair', 'couch',
+  'potted plant', 'bed', 'dining table', 'toilet', 'tv', 'laptop', 'mouse',
+  'remote', 'keyboard', 'microwave', 'oven', 'toaster', 'sink', 'refrigerator',
+  'book', 'clock', 'vase', 'scissors', 'teddy bear', 'hair drier', 'toothbrush',
+  
+  # Additional Product-Specific Classes (80-5310)
+  # Fruits & Vegetables (80-150)
+  'strawberry', 'pineapple', 'mango', 'tomato', 'potato', 'onion', 'pepper',
+  'lettuce', 'cabbage', 'cucumber', 'blueberry', 'grape', 'watermelon', 'lemon',
+  'lime', 'avocado', 'coconut', 'kiwi', 'papaya', 'peach', 'pear', 'plum',
+  
+  # Dairy & Eggs (151-180)
+  'milk', 'yogurt', 'cheese', 'butter', 'cream', 'egg', 'milk_bottle',
+  
+  # Bread & Bakery (181-210)
+  'bread', 'croissant', 'donut', 'cake', 'muffin', 'bagel', 'baguette',
+  
+  # Beverages (211-260)
+  'water', 'coffee', 'tea', 'juice', 'cola', 'soda', 'milk_bottle', 'beer',
+  'wine', 'whiskey', 'vodka', 'rum', 'gin', 'liquor', 'energy_drink',
+  'smoothie', 'milkshake', 'iced_tea', 'lemonade', 'coconut_water',
+  
+  # Snacks & Sweets (261-310)
+  'chocolate', 'candy', 'chips', 'cookie', 'cereal', 'granola', 'popcorn',
+  'pretzel', 'nuts', 'peanuts', 'almonds', 'cashews', 'sunflower_seeds',
+  
+  # Pantry Items (311-380)
+  'pasta', 'rice', 'flour', 'sugar', 'salt', 'oil', 'canned_beans',
+  'canned_tuna', 'peanut_butter', 'jam', 'honey', 'maple_syrup', 'vinegar',
+  
+  # Condiments (381-430)
+  'ketchup', 'mustard', 'mayo', 'soy_sauce', 'worcestershire', 'hot_sauce',
+  'bbq_sauce', 'ranch_dressing', 'italian_dressing', 'olive_oil',
+  
+  # Frozen Foods (431-480)
+  'frozen_pizza', 'frozen_vegetables', 'ice_cream', 'frozen_fish',
+  'frozen_chicken', 'frozen_fries', 'popsicles', 'frozen_berries',
+  
+  # Household Items (481-550)
+  'soap', 'shampoo', 'toothpaste', 'detergent', 'toilet_paper', 'tissues',
+  'paper_towels', 'dish_soap', 'laundry_detergent', 'bleach', 'trash_bags',
+  
+  # Personal Care (551-610)
+  'deodorant', 'lotion', 'sunscreen', 'toothbrush', 'floss', 'razor',
+  'shaving_cream', 'cologne', 'perfume', 'lipstick', 'mascara', 'foundation',
+  
+  # Miscellaneous (611-5310)
+  # Add up to 5310 additional product classes as needed
+  'item', 'product', 'object'
+]
+
+# Dataset statistics (update after collecting data)
+# total_images: 5310
+# total_annotations: 50000+
+# average_objects_per_image: 2.5
+# min_confidence_threshold: 0.35
